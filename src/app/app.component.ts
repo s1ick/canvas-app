@@ -125,7 +125,6 @@ export class AppComponent implements AfterViewInit {
     }
     if( e.keyCode == 82) {
       console.log('Replay!');
-      debugger
       this.coords = JSON.parse(localStorage.getItem('coords'))
       this.clear();
       this.replay();
@@ -137,12 +136,11 @@ export class AppComponent implements AfterViewInit {
     }
   }
   public save() {
-    debugger;
     localStorage.setItem('coords', JSON.stringify(this.coords));
   }
   public replay() {
-    let timer = setInterval(function () {
-      debugger;
+
+    let timer = setInterval(() => {
       if(!this.coords.length) {
         clearInterval(timer);
         this.context.beginPath();
@@ -161,7 +159,9 @@ export class AppComponent implements AfterViewInit {
       this.context.fill();
       this.context.beginPath();
       this.context.moveTo(e.clientX, e.clientY)
-    }, 30)
+
+     },30)
+
   }
   public clear() {
     this.context.fillStyle = 'white';
