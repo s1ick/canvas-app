@@ -66,19 +66,19 @@ export class AppComponent implements AfterViewInit {
     //Menu
     this.context.font = "24px Arial";
     this.context.fillStyle = "yellow";
-    //this.context.fillText("S - save", xFontSidebarTitle, yFontSidebarTitle + 60);
-    this.context.fillText("C - clear", xFontSidebarTitle, yFontSidebarTitle + 60);
-    // this.context.fillText("R - record", xFontSidebarTitle, yFontSidebarTitle + 180);
+    this.context.fillText("S - save", xFontSidebarTitle, yFontSidebarTitle + 60);
+    this.context.fillText("C - clear", xFontSidebarTitle, yFontSidebarTitle + 120);
+    this.context.fillText("R - record", xFontSidebarTitle, yFontSidebarTitle + 180);
     
+
+    this.context.beginPath();       
+    this.context.moveTo(10, 380);   
+    this.context.lineTo(290, 380);  
+    this.context.stroke();          
 
     this.context.beginPath();       
     this.context.moveTo(10, 150);   
     this.context.lineTo(290, 150);  
-    this.context.stroke();          
-
-    this.context.beginPath();       
-    this.context.moveTo(10, 220);   
-    this.context.lineTo(290, 220);  
     this.context.stroke(); 
 
     this.context.beginPath();     
@@ -128,7 +128,7 @@ export class AppComponent implements AfterViewInit {
       debugger
       this.coords = JSON.parse(localStorage.getItem('coords'))
       this.clear();
-      // this.replay();
+      this.replay();
     }
     if( e.keyCode == 67) {
       
